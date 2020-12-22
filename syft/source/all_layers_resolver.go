@@ -70,8 +70,9 @@ func (r *AllLayersResolver) FilesByPath(paths ...string) ([]Location, error) {
 	for _, path := range paths {
 		for idx, layerIdx := range r.layers {
 			tree := r.img.Layers[layerIdx].Tree
-			ref := tree.File(file.Path(path))
-			if ref == nil {
+			// TODO: critical! does not match against symlinks....
+			exists, ref := tree.File(file.Path(path))
+			if !exists && ref == nil {
 				// no file found, keep looking through layers
 				continue
 			}
@@ -80,6 +81,7 @@ func (r *AllLayersResolver) FilesByPath(paths ...string) ([]Location, error) {
 			if ref.Path == "/" {
 				continue
 			} else if r.img.FileCatalog.Exists(*ref) {
+				// TODO: critical! does not match against symlinks....
 				metadata, err := r.img.FileCatalog.Get(*ref)
 				if err != nil {
 					return nil, fmt.Errorf("unable to get file metadata for path=%q: %w", ref.Path, err)
@@ -145,13 +147,14 @@ func (r *AllLayersResolver) FilesByGlob(patterns ...string) ([]Location, error) 
 // RelativeFileByPath fetches a single file at the given path relative to the layer squash of the given reference.
 // This is helpful when attempting to find a file that is in the same layer or lower as another file.
 func (r *AllLayersResolver) RelativeFileByPath(location Location, path string) *Location {
+	// TODO: critical! does not match against symlinks....
 	entry, err := r.img.FileCatalog.Get(location.ref)
 	if err != nil {
 		return nil
 	}
 
-	relativeRef := entry.Source.SquashedTree.File(file.Path(path))
-	if relativeRef == nil {
+	exists, relativeRef := entry.Source.SquashedTree.File(file.Path(path))
+	if !exists && relativeRef == nil {
 		return nil
 	}
 
