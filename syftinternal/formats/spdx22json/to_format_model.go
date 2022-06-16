@@ -6,12 +6,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/anchore/syft/internal"
 	"github.com/anchore/syft/syft/artifact"
 	"github.com/anchore/syft/syft/file"
 	"github.com/anchore/syft/syft/pkg"
 	"github.com/anchore/syft/syft/sbom"
 	"github.com/anchore/syft/syft/source"
+	"github.com/zeromike/syft/syftinternal"
 	"github.com/zeromike/syft/syftinternal/formats/common/spdxhelpers"
 	"github.com/zeromike/syft/syftinternal/formats/spdx22json/model"
 	"github.com/zeromike/syft/syftinternal/log"
@@ -33,7 +33,7 @@ func toFormatModel(s sbom.SBOM) *model.Document {
 			Creators: []string{
 				// note: key-value format derived from the JSON example document examples: https://github.com/spdx/spdx-spec/blob/v2.2/examples/SPDXJSONExample-v2.2.spdx.json
 				"Organization: Anchore, Inc",
-				"Tool: " + internal.ApplicationName + "-" + s.Descriptor.Version,
+				"Tool: " + syftinternal.ApplicationName + "-" + s.Descriptor.Version,
 			},
 			LicenseListVersion: spdxlicense.Version,
 		},
@@ -198,11 +198,11 @@ func toFileTypes(metadata *source.FileMetadata) (ty []string) {
 		ty = append(ty, string(spdxhelpers.AudioFileType))
 	}
 
-	if internal.IsExecutable(metadata.MIMEType) {
+	if syftinternal.IsExecutable(metadata.MIMEType) {
 		ty = append(ty, string(spdxhelpers.BinaryFileType))
 	}
 
-	if internal.IsArchive(metadata.MIMEType) {
+	if syftinternal.IsArchive(metadata.MIMEType) {
 		ty = append(ty, string(spdxhelpers.ArchiveFileType))
 	}
 

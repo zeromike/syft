@@ -9,12 +9,12 @@ import (
 	"io"
 	"sync"
 
-	"github.com/anchore/syft/internal"
 	"github.com/gookit/color"
 	"github.com/wagoodman/jotframe/pkg/frame"
 
 	syftEventParsers "github.com/anchore/syft/syft/event/parsers"
 	"github.com/wagoodman/go-partybus"
+	"github.com/zeromike/syft/syftinternal"
 )
 
 // handleAppUpdateAvailable is a UI handler function to display a new application version to the top of the screen.
@@ -29,7 +29,7 @@ func handleAppUpdateAvailable(_ context.Context, fr *frame.Frame, event partybus
 		return err
 	}
 
-	message := color.Magenta.Sprintf("New version of %s is available: %s", internal.ApplicationName, newVersion)
+	message := color.Magenta.Sprintf("New version of %s is available: %s", syftinternal.ApplicationName, newVersion)
 	_, _ = io.WriteString(line, message)
 
 	return nil

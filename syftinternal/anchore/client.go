@@ -9,7 +9,7 @@ import (
 	"unicode"
 
 	"github.com/anchore/client-go/pkg/external"
-	"github.com/anchore/syft/internal"
+	"github.com/zeromike/syft/syftinternal"
 	"github.com/zeromike/syft/syftinternal/version"
 )
 
@@ -29,7 +29,7 @@ func NewClient(cfg Configuration) (*Client, error) {
 	if cfg.UserAgent == "" {
 		versionInfo := version.FromBuild()
 		// format: product / product-version comment
-		cfg.UserAgent = fmt.Sprintf("%s / %s %s", internal.ApplicationName, versionInfo.Version, versionInfo.Platform)
+		cfg.UserAgent = fmt.Sprintf("%s / %s %s", syftinternal.ApplicationName, versionInfo.Version, versionInfo.Platform)
 	}
 
 	baseURL, err := prepareBaseURLForClient(cfg.BaseURL)

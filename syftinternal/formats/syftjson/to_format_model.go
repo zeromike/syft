@@ -13,9 +13,9 @@ import (
 
 	"github.com/anchore/syft/syft/sbom"
 
-	"github.com/anchore/syft/internal"
 	"github.com/anchore/syft/syft/pkg"
 	"github.com/anchore/syft/syft/source"
+	"github.com/zeromike/syft/syftinternal"
 	"github.com/zeromike/syft/syftinternal/formats/syftjson/model"
 	"github.com/zeromike/syft/syftinternal/log"
 )
@@ -38,8 +38,8 @@ func ToFormatModel(s sbom.SBOM) model.Document {
 		Distro:                toLinuxReleaser(s.Artifacts.LinuxDistribution),
 		Descriptor:            toDescriptor(s.Descriptor),
 		Schema: model.Schema{
-			Version: internal.JSONSchemaVersion,
-			URL:     fmt.Sprintf("https://raw.githubusercontent.com/anchore/syft/main/schema/json/schema-%s.json", internal.JSONSchemaVersion),
+			Version: syftinternal.JSONSchemaVersion,
+			URL:     fmt.Sprintf("https://raw.githubusercontent.com/anchore/syft/main/schema/json/schema-%s.json", syftinternal.JSONSchemaVersion),
 		},
 	}
 }

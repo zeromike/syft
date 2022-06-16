@@ -5,9 +5,9 @@ import (
 	"net/url"
 	"path"
 
-	"github.com/anchore/syft/internal"
 	"github.com/anchore/syft/syft/source"
 	"github.com/google/uuid"
+	"github.com/zeromike/syft/syftinternal"
 )
 
 func DocumentNameAndNamespace(srcMetadata source.Metadata) (string, string) {
@@ -35,7 +35,7 @@ func DocumentNamespace(name string, srcMetadata source.Metadata) string {
 	u := url.URL{
 		Scheme: "https",
 		Host:   "anchore.com",
-		Path:   path.Join(internal.ApplicationName, identifier),
+		Path:   path.Join(syftinternal.ApplicationName, identifier),
 	}
 
 	return u.String()

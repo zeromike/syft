@@ -8,7 +8,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/anchore/syft/internal"
+	"github.com/zeromike/syft/syftinternal"
 )
 
 const valueNotProvided = "[not provided]"
@@ -43,7 +43,7 @@ func (v Version) IsProductionBuild() bool {
 func FromBuild() Version {
 	return Version{
 		Version:           version,
-		JSONSchemaVersion: internal.JSONSchemaVersion,
+		JSONSchemaVersion: syftinternal.JSONSchemaVersion,
 		GitCommit:         gitCommit,
 		GitDescription:    gitDescription,
 		BuildDate:         buildDate,

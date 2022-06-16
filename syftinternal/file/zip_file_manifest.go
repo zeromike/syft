@@ -6,7 +6,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/anchore/syft/internal"
+	"github.com/zeromike/syft/syftinternal"
 	"github.com/zeromike/syft/syftinternal/log"
 )
 
@@ -40,7 +40,7 @@ func (z ZipFileManifest) Add(entry string, info os.FileInfo) {
 
 // GlobMatch returns the path keys that match the given value(s).
 func (z ZipFileManifest) GlobMatch(patterns ...string) []string {
-	uniqueMatches := internal.NewStringSet()
+	uniqueMatches := syftinternal.NewStringSet()
 
 	for _, pattern := range patterns {
 		for entry := range z {

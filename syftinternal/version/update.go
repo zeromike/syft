@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	hashiVersion "github.com/anchore/go-version"
-	"github.com/anchore/syft/internal"
+	"github.com/zeromike/syft/syftinternal"
 )
 
 var latestAppVersionURL = struct {
@@ -15,7 +15,7 @@ var latestAppVersionURL = struct {
 	path string
 }{
 	host: "https://toolbox-data.anchore.io",
-	path: fmt.Sprintf("/%s/releases/latest/VERSION", internal.ApplicationName),
+	path: fmt.Sprintf("/%s/releases/latest/VERSION", syftinternal.ApplicationName),
 }
 
 // IsUpdateAvailable indicates if there is a newer application version available, and if so, what the new version is.

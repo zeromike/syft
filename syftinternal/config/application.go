@@ -10,9 +10,9 @@ import (
 	"github.com/sirupsen/logrus"
 
 	"github.com/adrg/xdg"
-	"github.com/anchore/syft/internal"
 	"github.com/mitchellh/go-homedir"
 	"github.com/spf13/viper"
+	"github.com/zeromike/syft/syftinternal"
 	"github.com/zeromike/syft/syftinternal/log"
 	"gopkg.in/yaml.v2"
 )
@@ -70,7 +70,7 @@ func (cfg *Application) LoadAllValues(v *viper.Viper, configPath string) error {
 	loadDefaultValues(v)
 
 	// load environment variables
-	v.SetEnvPrefix(internal.ApplicationName)
+	v.SetEnvPrefix(syftinternal.ApplicationName)
 	v.AllowEmptyEnv(true)
 	v.AutomaticEnv()
 
@@ -211,7 +211,7 @@ func loadConfig(v *viper.Viper, configPath string) error {
 	// start searching for valid configs in order...
 	// 1. look for .<appname>.yaml (in the current directory)
 	v.AddConfigPath(".")
-	v.SetConfigName("." + internal.ApplicationName)
+	v.SetConfigName("." + syftinternal.ApplicationName)
 	if err = v.ReadInConfig(); err == nil {
 		v.Set("config", v.ConfigFileUsed())
 		return nil
@@ -220,7 +220,7 @@ func loadConfig(v *viper.Viper, configPath string) error {
 	}
 
 	// 2. look for .<appname>/config.yaml (in the current directory)
-	v.AddConfigPath("." + internal.ApplicationName)
+	v.AddConfigPath("." + syftinternal.ApplicationName)
 	v.SetConfigName("config")
 	if err = v.ReadInConfig(); err == nil {
 		v.Set("config", v.ConfigFileUsed())
@@ -233,7 +233,7 @@ func loadConfig(v *viper.Viper, configPath string) error {
 	home, err := homedir.Dir()
 	if err == nil {
 		v.AddConfigPath(home)
-		v.SetConfigName("." + internal.ApplicationName)
+		v.SetConfigName("." + syftinternal.ApplicationName)
 		if err = v.ReadInConfig(); err == nil {
 			v.Set("config", v.ConfigFileUsed())
 			return nil
@@ -243,9 +243,9 @@ func loadConfig(v *viper.Viper, configPath string) error {
 	}
 
 	// 4. look for <appname>/config.yaml in xdg locations (starting with xdg home config dir, then moving upwards)
-	v.AddConfigPath(path.Join(xdg.ConfigHome, internal.ApplicationName))
+	v.AddConfigPath(path.Join(xdg.ConfigHome, syftinternal.ApplicationName))
 	for _, dir := range xdg.ConfigDirs {
-		v.AddConfigPath(path.Join(dir, internal.ApplicationName))
+		v.AddConfigPath(path.Join(dir, syftinternal.ApplicationName))
 	}
 	v.SetConfigName("config")
 	if err = v.ReadInConfig(); err == nil {

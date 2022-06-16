@@ -6,9 +6,9 @@ import (
 
 	"github.com/anchore/syft/syft/sbom"
 
-	"github.com/anchore/syft/internal"
 	"github.com/anchore/syft/syft/pkg"
 	"github.com/spdx/tools-golang/spdx"
+	"github.com/zeromike/syft/syftinternal"
 	"github.com/zeromike/syft/syftinternal/formats/common/spdxhelpers"
 	"github.com/zeromike/syft/syftinternal/spdxlicense"
 )
@@ -68,7 +68,7 @@ func toFormatModel(s sbom.SBOM) *spdx.Document2_2 {
 			// Cardinality: mandatory, one or many
 			CreatorPersons:       nil,
 			CreatorOrganizations: []string{"Anchore, Inc"},
-			CreatorTools:         []string{internal.ApplicationName + "-" + s.Descriptor.Version},
+			CreatorTools:         []string{syftinternal.ApplicationName + "-" + s.Descriptor.Version},
 
 			// 2.9: Created: data format YYYY-MM-DDThh:mm:ssZ
 			// Cardinality: mandatory, one
