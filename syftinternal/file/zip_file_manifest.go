@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	"github.com/anchore/syft/internal"
-	"github.com/anchore/syft/internal/log"
+	"github.com/zeromike/syft/syftinternal/log"
 )
 
 // ZipFileManifest is a collection of paths and their file metadata.

@@ -15,9 +15,9 @@ import (
 
 	"github.com/anchore/syft/internal"
 	"github.com/anchore/syft/internal/formats/syftjson/model"
-	"github.com/anchore/syft/internal/log"
 	"github.com/anchore/syft/syft/pkg"
 	"github.com/anchore/syft/syft/source"
+	"github.com/zeromike/syft/syftinternal/log"
 )
 
 // ToFormatModel transforms the sbom import a format-specific model.

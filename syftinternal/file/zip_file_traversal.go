@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/anchore/syft/internal/log"
+	"github.com/zeromike/syft/syftinternal/log"
 )
 
 const (

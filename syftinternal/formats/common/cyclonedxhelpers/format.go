@@ -7,11 +7,11 @@ import (
 	"github.com/google/uuid"
 
 	"github.com/anchore/syft/internal"
-	"github.com/anchore/syft/internal/log"
 	"github.com/anchore/syft/syft/artifact"
 	"github.com/anchore/syft/syft/linux"
 	"github.com/anchore/syft/syft/sbom"
 	"github.com/anchore/syft/syft/source"
+	"github.com/zeromike/syft/syftinternal/log"
 )
 
 func ToFormatModel(s sbom.SBOM) *cyclonedx.BOM {

@@ -9,13 +9,13 @@ import (
 	"github.com/spdx/tools-golang/spdx"
 
 	"github.com/anchore/packageurl-go"
-	"github.com/anchore/syft/internal/log"
 	"github.com/anchore/syft/syft/artifact"
 	"github.com/anchore/syft/syft/file"
 	"github.com/anchore/syft/syft/linux"
 	"github.com/anchore/syft/syft/pkg"
 	"github.com/anchore/syft/syft/sbom"
 	"github.com/anchore/syft/syft/source"
+	"github.com/zeromike/syft/syftinternal/log"
 )
 
 func ToSyftModel(doc *spdx.Document2_2) (*sbom.SBOM, error) {

@@ -11,9 +11,9 @@ import (
 
 	"github.com/adrg/xdg"
 	"github.com/anchore/syft/internal"
-	"github.com/anchore/syft/internal/log"
 	"github.com/mitchellh/go-homedir"
 	"github.com/spf13/viper"
+	"github.com/zeromike/syft/syftinternal/log"
 	"gopkg.in/yaml.v2"
 )
 

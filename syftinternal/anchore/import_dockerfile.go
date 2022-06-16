@@ -8,7 +8,7 @@ import (
 
 	"github.com/wagoodman/go-progress"
 
-	"github.com/anchore/syft/internal/log"
+	"github.com/zeromike/syft/syftinternal/log"
 
 	"github.com/anchore/client-go/pkg/external"
 )

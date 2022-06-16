@@ -3,8 +3,8 @@ package cyclonedxhelpers
 import (
 	"github.com/CycloneDX/cyclonedx-go"
 
-	"github.com/anchore/syft/internal/log"
 	"github.com/anchore/syft/syft/pkg"
+	"github.com/zeromike/syft/syftinternal/log"
 )
 
 func encodeSingleCPE(p pkg.Package) string {

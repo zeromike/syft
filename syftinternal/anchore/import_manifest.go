@@ -11,7 +11,7 @@ import (
 	"github.com/wagoodman/go-progress"
 
 	"github.com/anchore/client-go/pkg/external"
-	"github.com/anchore/syft/internal/log"
+	"github.com/zeromike/syft/syftinternal/log"
 )
 
 type manifestImportAPI interface {

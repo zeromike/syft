@@ -2,13 +2,13 @@ package syftjson
 
 import (
 	"github.com/anchore/syft/internal/formats/syftjson/model"
-	"github.com/anchore/syft/internal/log"
 	"github.com/anchore/syft/syft/artifact"
 	"github.com/anchore/syft/syft/linux"
 	"github.com/anchore/syft/syft/pkg"
 	"github.com/anchore/syft/syft/sbom"
 	"github.com/anchore/syft/syft/source"
 	"github.com/google/go-cmp/cmp"
+	"github.com/zeromike/syft/syftinternal/log"
 )
 
 func toSyftModel(doc model.Document) (*sbom.SBOM, error) {
