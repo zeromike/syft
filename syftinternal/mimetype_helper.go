@@ -1,4 +1,4 @@
-package internal
+package syftinternal
 
 import "github.com/scylladb/go-set/strset"
 
