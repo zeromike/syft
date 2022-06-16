@@ -4,8 +4,8 @@ import (
 	"flag"
 	"testing"
 
-	"github.com/anchore/syft/internal/formats/common/testutils"
 	"github.com/go-test/deep"
+	"github.com/zeromike/syft/syftinternal/formats/common/testutils"
 )
 
 var updateTableGoldenFiles = flag.Bool("update-table", false, "update the *.golden files for table format")

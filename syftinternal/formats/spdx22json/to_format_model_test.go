@@ -9,10 +9,10 @@ import (
 
 	"github.com/anchore/syft/syft/artifact"
 
-	"github.com/anchore/syft/internal/formats/common/spdxhelpers"
-	"github.com/anchore/syft/internal/formats/spdx22json/model"
 	"github.com/anchore/syft/syft/source"
 	"github.com/stretchr/testify/assert"
+	"github.com/zeromike/syft/syftinternal/formats/common/spdxhelpers"
+	"github.com/zeromike/syft/syftinternal/formats/spdx22json/model"
 )
 
 func Test_toFileTypes(t *testing.T) {

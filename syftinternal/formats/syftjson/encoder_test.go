@@ -13,7 +13,7 @@ import (
 	"github.com/anchore/syft/syft/sbom"
 	"github.com/anchore/syft/syft/source"
 
-	"github.com/anchore/syft/internal/formats/common/testutils"
+	"github.com/zeromike/syft/syftinternal/formats/common/testutils"
 )
 
 var updateJson = flag.Bool("update-json", false, "update the *.golden files for json encoders")

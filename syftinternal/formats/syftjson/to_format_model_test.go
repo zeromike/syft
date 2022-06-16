@@ -5,10 +5,10 @@ import (
 
 	"github.com/scylladb/go-set/strset"
 
-	"github.com/anchore/syft/internal/formats/syftjson/model"
 	"github.com/anchore/syft/syft/source"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"github.com/zeromike/syft/syftinternal/formats/syftjson/model"
 )
 
 func Test_toSourceModel(t *testing.T) {

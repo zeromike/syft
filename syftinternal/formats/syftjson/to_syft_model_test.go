@@ -3,11 +3,11 @@ package syftjson
 import (
 	"testing"
 
-	"github.com/anchore/syft/internal/formats/syftjson/model"
 	"github.com/anchore/syft/syft/artifact"
 	"github.com/anchore/syft/syft/source"
 	"github.com/scylladb/go-set/strset"
 	"github.com/stretchr/testify/assert"
+	"github.com/zeromike/syft/syftinternal/formats/syftjson/model"
 )
 
 func Test_toSyftSourceData(t *testing.T) {

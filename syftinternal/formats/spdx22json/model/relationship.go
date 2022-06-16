@@ -1,6 +1,6 @@
 package model
 
-import "github.com/anchore/syft/internal/formats/common/spdxhelpers"
+import "github.com/zeromike/syft/syftinternal/formats/common/spdxhelpers"
 
 type Relationship struct {
 	// Id to which the SPDX element is related

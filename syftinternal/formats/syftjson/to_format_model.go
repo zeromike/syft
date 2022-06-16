@@ -14,9 +14,9 @@ import (
 	"github.com/anchore/syft/syft/sbom"
 
 	"github.com/anchore/syft/internal"
-	"github.com/anchore/syft/internal/formats/syftjson/model"
 	"github.com/anchore/syft/syft/pkg"
 	"github.com/anchore/syft/syft/source"
+	"github.com/zeromike/syft/syftinternal/formats/syftjson/model"
 	"github.com/zeromike/syft/syftinternal/log"
 )
 

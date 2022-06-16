@@ -1,6 +1,6 @@
 package model
 
-import "github.com/anchore/syft/internal/formats/common/spdxhelpers"
+import "github.com/zeromike/syft/syftinternal/formats/common/spdxhelpers"
 
 // ElementID represents the identifier string portion of an SPDX element
 // identifier. DocElementID should be used for any attributes which can

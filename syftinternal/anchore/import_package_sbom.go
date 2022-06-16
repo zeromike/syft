@@ -9,10 +9,10 @@ import (
 	"net/http"
 
 	"github.com/anchore/client-go/pkg/external"
-	"github.com/anchore/syft/internal/formats/syftjson"
-	syftjsonModel "github.com/anchore/syft/internal/formats/syftjson/model"
 	"github.com/anchore/syft/syft/sbom"
 	"github.com/wagoodman/go-progress"
+	"github.com/zeromike/syft/syftinternal/formats/syftjson"
+	syftjsonModel "github.com/zeromike/syft/syftinternal/formats/syftjson/model"
 	"github.com/zeromike/syft/syftinternal/log"
 )
 

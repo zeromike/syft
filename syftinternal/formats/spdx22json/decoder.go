@@ -6,8 +6,8 @@ import (
 
 	"github.com/spdx/tools-golang/jsonloader"
 
-	"github.com/anchore/syft/internal/formats/common/spdxhelpers"
 	"github.com/anchore/syft/syft/sbom"
+	"github.com/zeromike/syft/syftinternal/formats/common/spdxhelpers"
 )
 
 func decoder(reader io.Reader) (s *sbom.SBOM, err error) {

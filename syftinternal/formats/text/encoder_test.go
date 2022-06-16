@@ -4,7 +4,7 @@ import (
 	"flag"
 	"testing"
 
-	"github.com/anchore/syft/internal/formats/common/testutils"
+	"github.com/zeromike/syft/syftinternal/formats/common/testutils"
 )
 
 var updateTextEncoderGoldenFiles = flag.Bool("update-text", false, "update the *.golden files for text encoder")

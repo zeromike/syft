@@ -5,10 +5,10 @@ import (
 	"regexp"
 	"testing"
 
-	"github.com/anchore/syft/internal/formats/common/testutils"
 	"github.com/anchore/syft/syft/pkg"
 	"github.com/anchore/syft/syft/sbom"
 	"github.com/anchore/syft/syft/source"
+	"github.com/zeromike/syft/syftinternal/formats/common/testutils"
 )
 
 var updateSpdxTagValue = flag.Bool("update-spdx-tv", false, "update the *.golden files for spdx-tv encoders")

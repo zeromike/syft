@@ -6,7 +6,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/anchore/syft/internal/formats/syftjson/model"
+	"github.com/zeromike/syft/syftinternal/formats/syftjson/model"
 )
 
 func validator(reader io.Reader) error {

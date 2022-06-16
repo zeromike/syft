@@ -6,8 +6,8 @@ import (
 
 	"github.com/spdx/tools-golang/tvloader"
 
-	"github.com/anchore/syft/internal/formats/common/spdxhelpers"
 	"github.com/anchore/syft/syft/sbom"
+	"github.com/zeromike/syft/syftinternal/formats/common/spdxhelpers"
 )
 
 func decoder(reader io.Reader) (*sbom.SBOM, error) {

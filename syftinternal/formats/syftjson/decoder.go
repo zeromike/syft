@@ -7,7 +7,7 @@ import (
 
 	"github.com/anchore/syft/syft/sbom"
 
-	"github.com/anchore/syft/internal/formats/syftjson/model"
+	"github.com/zeromike/syft/syftinternal/formats/syftjson/model"
 )
 
 func decoder(reader io.Reader) (*sbom.SBOM, error) {

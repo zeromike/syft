@@ -9,7 +9,6 @@ import (
 	"testing"
 
 	"github.com/anchore/client-go/pkg/external"
-	"github.com/anchore/syft/internal/formats/syftjson"
 	"github.com/anchore/syft/syft/artifact"
 	"github.com/anchore/syft/syft/linux"
 	"github.com/anchore/syft/syft/pkg"
@@ -20,6 +19,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"github.com/wagoodman/go-progress"
+	"github.com/zeromike/syft/syftinternal/formats/syftjson"
 )
 
 func must(c pkg.CPE, e error) pkg.CPE {
