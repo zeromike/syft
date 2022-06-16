@@ -1,9 +1,9 @@
 package config
 
 import (
-	"github.com/anchore/syft/internal/file"
 	"github.com/anchore/syft/syft/source"
 	"github.com/spf13/viper"
+	"github.com/zeromike/syft/syftinternal/file"
 )
 
 type fileContents struct {

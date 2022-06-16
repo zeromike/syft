@@ -10,7 +10,7 @@ import (
 
 	"github.com/anchore/client-go/pkg/external"
 	"github.com/anchore/syft/internal"
-	"github.com/anchore/syft/internal/version"
+	"github.com/zeromike/syft/syftinternal/version"
 )
 
 type Configuration struct {
