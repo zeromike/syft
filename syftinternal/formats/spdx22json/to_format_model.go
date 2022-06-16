@@ -7,7 +7,6 @@ import (
 	"time"
 
 	"github.com/anchore/syft/internal"
-	"github.com/anchore/syft/internal/spdxlicense"
 	"github.com/anchore/syft/syft/artifact"
 	"github.com/anchore/syft/syft/file"
 	"github.com/anchore/syft/syft/pkg"
@@ -16,6 +15,7 @@ import (
 	"github.com/zeromike/syft/syftinternal/formats/common/spdxhelpers"
 	"github.com/zeromike/syft/syftinternal/formats/spdx22json/model"
 	"github.com/zeromike/syft/syftinternal/log"
+	"github.com/zeromike/syft/syftinternal/spdxlicense"
 )
 
 // toFormatModel creates and populates a new JSON document struct that follows the SPDX 2.2 spec from the given cataloging results.
